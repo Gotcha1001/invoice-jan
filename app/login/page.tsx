@@ -91,43 +91,46 @@ export default async function Login() {
   if (session?.user) redirect("/dashboard");
 
   return (
-    <div className="flex h-screen w-full items-center justify-center px-4">
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter Your Email Below To Login Into Your Account
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form
-            action={async (formData) => {
-              "use server";
-              try {
-                await signIn("credentials", {
-                  email: formData.get("email"),
-                  redirectTo: "/dashboard",
-                });
-              } catch (error) {
-                if (isRedirectError(error)) throw error;
-                console.error("Sign in error:", error);
-              }
-            }}
-            className="flex flex-col gap-y-4"
-          >
-            <div className="flex flex-col gap-y-2">
-              <Label>Email</Label>
-              <Input
-                name="email"
-                type="email"
-                required
-                placeholder="Welcome@Again.com"
-              />
-            </div>
-            <SubmitButton text="Login" />
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+    <>
+      <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+      <div className="flex h-screen w-full items-center justify-center px-4">
+        <Card className="w-[350px]">
+          <CardHeader>
+            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardDescription>
+              Enter Your Email Below To Login Into Your Account
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form
+              action={async (formData) => {
+                "use server";
+                try {
+                  await signIn("credentials", {
+                    email: formData.get("email"),
+                    redirectTo: "/dashboard",
+                  });
+                } catch (error) {
+                  if (isRedirectError(error)) throw error;
+                  console.error("Sign in error:", error);
+                }
+              }}
+              className="flex flex-col gap-y-4"
+            >
+              <div className="flex flex-col gap-y-2">
+                <Label>Email</Label>
+                <Input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Welcome@Again.com"
+                />
+              </div>
+              <SubmitButton text="Login" />
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }
