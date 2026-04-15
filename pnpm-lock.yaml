@@ -20,6 +20,9 @@ importers:
       '@conform-to/zod':
         specifier: ^1.18.0
         version: 1.18.0(zod@3.25.76)
+      '@prisma/client':
+        specifier: '6'
+        version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       '@prisma/extension-accelerate':
         specifier: ^3.0.1
         version: 3.0.1(@prisma/client@6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3))
@@ -65,6 +68,9 @@ importers:
       nodemailer:
         specifier: ^8.0.4
         version: 8.0.4
+      prisma:
+        specifier: ^6
+        version: 6.19.3(typescript@5.9.3)
       react:
         specifier: 19.2.4
         version: 19.2.4
@@ -99,9 +105,6 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
     devDependencies:
-      '@prisma/client':
-        specifier: '6'
-        version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.2.2
@@ -120,9 +123,6 @@ importers:
       eslint-config-next:
         specifier: 16.2.2
         version: 16.2.2(@typescript-eslint/parser@8.58.0(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-      prisma:
-        specifier: ^6.19.3
-        version: 6.19.3(typescript@5.9.3)
       tailwindcss:
         specifier: ^4
         version: 4.2.2
